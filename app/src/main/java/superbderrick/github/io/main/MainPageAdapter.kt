@@ -12,10 +12,21 @@ class MainPageAdapter(fragmentManager:FragmentManager) : FragmentPagerAdapter(fr
 
     override fun getItem(postion: Int): Fragment {
         return when (postion) {
-            0 -> BaseFragment()
+            0 -> MovieFragment()
+            1 -> LocalFragment()
 
             else -> {
                 return BaseFragment()
+            }
+        }
+    }
+
+    override fun getPageTitle(position: Int): CharSequence {
+        return when (position) {
+            0 -> "Movie"
+            1 -> "History"
+            else -> {
+                return "Like"
             }
         }
     }
